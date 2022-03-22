@@ -35,8 +35,8 @@ io.on("connection", (socket) => {
     });
   });
   // -----  message --------
-  socket.on("send_message", ({ message, id, time, image }) => {
-    io.emit("receive_message", { user: users[id], message, id, time, image });
+  socket.on("send_message", ({ message, id, time }) => {
+    io.emit("receive_message", { user: users[id], message, id, time });
   });
 
   // -------disconnect user------
