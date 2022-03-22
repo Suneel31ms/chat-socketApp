@@ -19,6 +19,7 @@ const Chat = () => {
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState("");
 
+ //send msg
   const sendMsg = () => {
     const messageData = {
       id,
@@ -63,7 +64,7 @@ const Chat = () => {
     };
   }, []);
 
-  //send msg
+  //receive msg
   useEffect(() => {
     socket.on("receive_message", (data) => {
       setMessages([...messages, data]);
